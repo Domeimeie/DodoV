@@ -21,6 +21,7 @@ class Greeting
     #[ORM\GeneratedValue(strategy: 'SEQUENCE')]
     private ?int $id = null;
 
+
     /**
      * A nice person
      */

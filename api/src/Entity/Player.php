@@ -2,17 +2,15 @@
 
 namespace App\Entity;
 
-use Nette\Utils\ArrayList;
+use ApiPlatform\Metadata\ApiResource;
 
+#[ApiResource]
 class Player
 {
     /** The ID of this Player. */
-    #[ORM\Id]
-    #[ORM\Column(type: 'integer')]
-    #[ORM\GeneratedValue(strategy: 'SEQUENCE')]
     private ?int $id = null;
 
-    /** The villages this player owns. */
+    /** @var Village[] Villages owned by player */
     public iterable $villages;
 
     public function __construct()
@@ -20,5 +18,9 @@ class Player
         $this->villages = new ArrayCollection();
     }
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
 }

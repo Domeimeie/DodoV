@@ -3,12 +3,15 @@
 namespace App\Entity;
 use ApiPlatform\Metadata\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /** A village. */
+#[ORM\Entity]
 #[ApiResource]
 class Village
 {
     /** The ID of this village. */
+    #[ORM\Id, ORM\Column, ORM\GeneratedValue]
     private ?int $id = null;
 
     /** The player that owns the village */

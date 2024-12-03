@@ -8,6 +8,9 @@ use ApiPlatform\Metadata\ApiResource;
 class Attack
 {
     /** The ID of this attack. */
+    #[ORM\Id]
+    #[ORM\Column(type: 'integer')]
+    #[ORM\GeneratedValue(strategy: 'SEQUENCE')]
     private ?int $id = null;
 
     /** Origin of Attack */

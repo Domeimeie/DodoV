@@ -9,6 +9,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Village
 {
     /** The ID of this village. */
+    #[ORM\Id]
+    #[ORM\Column(type: 'integer')]
+    #[ORM\GeneratedValue(strategy: 'SEQUENCE')]
     private ?int $id = null;
 
     /** The player that owns the village */
